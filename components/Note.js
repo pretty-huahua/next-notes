@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import EditButton from '@/app/components/EditButton'
-import NotePreview from '@/app/components/NotePreview'
-export default function Note({ noteId, note }) {
+import EditButton from '@/components/EditButton'
+import NotePreview from '@/components/NotePreview'
+export default function Note ({ noteId, note }) {
   const { title, content, updateTime } = note
 
   return (
@@ -12,7 +12,7 @@ export default function Note({ noteId, note }) {
           <small className="note-updated-at" role="status">
             Last updated on {dayjs(updateTime).format('YYYY-MM-DD hh:mm:ss')}
           </small>
-            <EditButton noteId={noteId}>Edit</EditButton>
+          <EditButton noteId={noteId}>Edit</EditButton>
         </div>
       </div>
       <NotePreview>{content}</NotePreview>
