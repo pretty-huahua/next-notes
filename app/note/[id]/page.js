@@ -1,8 +1,8 @@
 
-import Note from '@/app/components/Note';
-import {getNote} from '@/lib/redis';
+import Note from '@/components/Note';
+import { getNote } from '@/lib/redis';
 
-export default async function Page({ params }) {
+export default async function Page ({ params }) {
   // 动态路由 获取笔记 id
   const noteId = params.id;
   const note = await getNote(noteId)

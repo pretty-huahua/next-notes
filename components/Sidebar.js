@@ -1,12 +1,13 @@
-import {Suspense} from 'react'
+import { Suspense } from 'react'
 import Link from 'next/link'
-import SidebarNoteList from '@/app/components/SidebarNoteList';
+import SidebarNoteList from '@/components/SidebarNoteList';
 import EditButton from './EditButton';
 import NoteListSkeleton from './NoteListSkeleton';
 import SidebarSearchField from './SidebarSearchField';
+import SidebarImport from '@/components/SidebarImport';
 
 
-export default async function Sidebar() {
+export default async function Sidebar () {
   return (
     <>
       <section className="col sidebar">
@@ -19,12 +20,12 @@ export default async function Sidebar() {
               height="20px"
               alt=""
               role="presentation"
-              />
+            />
             <strong>React Notes</strong>
           </section>
         </Link>
         <section className="sidebar-menu" role="menubar">
-        <SidebarSearchField />
+          <SidebarSearchField />
           <EditButton noteId={null}>New</EditButton>
         </section>
         <nav>
@@ -32,6 +33,7 @@ export default async function Sidebar() {
             <SidebarNoteList />
           </Suspense>
         </nav>
+        <SidebarImport />
       </section>
     </>
   )

@@ -1,17 +1,17 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import NotePreview from '@/app/components/NotePreview'
+import NotePreview from '@/components/NotePreview'
 import { useFormState } from 'react-dom'
-import { deleteNote, saveNote } from '../actions'
-import SaveButton from '@/app/components/SaveButton'
-import DeleteButton from '@/app/components/DeleteButton'
+import { deleteNote, saveNote } from '@/app/actions'
+import SaveButton from '@/components/SaveButton'
+import DeleteButton from '@/components/DeleteButton'
 
 const initialState = {
   message: null,
 }
 
-export default function NoteEditor({
+export default function NoteEditor ({
   noteId,
   initialTitle,
   initialBody
@@ -41,8 +41,8 @@ export default function NoteEditor({
           <DeleteButton isDraft={isDraft} formAction={delFormAction} />
         </div>
         <div className="note-editor-menu">
-          { saveState?.message }
-          { saveState.errors && saveState.errors[0].message }
+          {saveState?.message}
+          {saveState.errors && saveState.errors[0].message}
         </div>
         <label className="offscreen" htmlFor="note-title-input">
           Enter a title for your note

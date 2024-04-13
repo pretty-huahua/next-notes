@@ -1,10 +1,10 @@
 import './style.css'
-import Sidebar from '@/app/components/Sidebar'
+import Sidebar from '@/components/Sidebar'
 // import Sidebar from '@/components/Sidebar.js'
 // import Sidebar from '@@/Sidebar'
 // import Sidebar from '@/components/Sidebar'
 
-export default async function RootLayout({
+export default async function RootLayout ({
   children
 }) {
 
