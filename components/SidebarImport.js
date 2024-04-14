@@ -2,12 +2,15 @@
 
 import React, { Suspense } from 'react'
 import { useRouter } from 'next/navigation'
+import { useTransition } from 'react'
+
 
 export default function SidebarImport () {
   const router = useRouter()
+  const [isPending, startTransition] = useTransition();
+
 
   const onChange = async (e) => {
-    console.dir(e.target);
     const fileInput = e.target;
 
     if (!fileInput.files || fileInput.files.length === 0) {
@@ -32,7 +35,10 @@ export default function SidebarImport () {
       }
 
       const data = await response.json();
-      router.push(`/note/${data.uid}`)
+
+      
+      startTransition(() => router.push(`/note/${data.uid}`));
+      startTransition(() => router.refresh());
 
     } catch (error) {
       console.error("something went wrong");
