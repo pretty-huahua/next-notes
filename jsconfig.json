@@ -5,6 +5,7 @@
         "./*"
       ],
       "@/actions": ["./app/actions.js"],
+      "auth": ["./auth"]
       // "@@/*": ["./components/*"]
       // "@/components/*": ["/components/*"],
       // "@/lib/*": ["/lib/*"],
